@@ -17,3 +17,19 @@ func UIntToHexString(val uint32, includeZero bool) (ret string) {
 	}
 	return
 }
+
+func ProdMod(lowerLimit, upperLimit int, mod uint32, set []uint32) (r uint32) {
+	prod := uint64(set[lowerLimit] % mod)
+	for i := lowerLimit + 1; i <= upperLimit; i++ {
+		prod = (prod * uint64(set[i])) % uint64(mod)
+	}
+	r = uint32(prod)
+	return
+}
+
+func max(x, y int) int {
+	if x > y {
+		return x
+	}
+	return y
+}
