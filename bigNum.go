@@ -21,12 +21,6 @@ func main() {
 		fmt.Print(primes[i], " ")
 	}
 	fmt.Println()
-
-//	testRNS[0] = NewRNSNum(36)
-//	testRNS[1] = NewRNSNum(45)
-//	testRNS[2] = testRNS[0].add(testRNS[1])
-
-//	var testDeque Deque
 }
 
 func testMRSMod() {

@@ -105,13 +105,10 @@ func (n *RNSNum) ToMRSNum() (ret MRSNum, numGuesses int) {
 		ret.Add(1, n.buffer[0])
 		fmt.Println("len(n.buffer) : ", len(n.buffer), " len(primes) : ", len(primes))
 		for i := 1; i < len(n.buffer); i++ {
-			// while ret % primes[i - 1] != n.buffer[i] ret.buffer[i]++
-//			fmt.Println("i : ", i, " prime : ", primes[i], " target : ", n.buffer[i])
 			ret.Add(primes[i - 1], 0)
 			for ret.Mod(primes[i]) != n.buffer[i] {
 				ret.Set(i, ret.values[i] + 1)
 				numGuesses++
-//				fmt.Println(ret.BigInt().String(), " % ", primes[i], " = ", ret.Mod(primes[i]))
 			}
 		}
 	}
